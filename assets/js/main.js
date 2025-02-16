@@ -72,12 +72,12 @@ function showLanguageNotice() {
     document.body.appendChild(notice);
 
     document.getElementById('lang-en').addEventListener('click', () => {
-        document.body.removeChild(notice);
+        notice.style.display = 'none';
         // Add logic to switch to English
     });
 
     document.getElementById('lang-vi').addEventListener('click', () => {
-        document.body.removeChild(notice);
+        notice.style.display = 'none';
         // Add logic to switch to Vietnamese
     });
 }
