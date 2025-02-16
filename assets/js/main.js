@@ -55,4 +55,8 @@ navLinks.forEach(link => {
 // Ensure no section is highlighted when the page is loaded and scrolled to the top
 window.addEventListener('load', () => {
     navLinks.forEach(link => link.classList.remove('active'));
+<<<<<<< HEAD
+=======
+    highlightActiveSection(); // Call this to ensure the correct section is highlighted after removing all active classes
+>>>>>>> parent of 5ac090b (Fix directory structure)
 });
