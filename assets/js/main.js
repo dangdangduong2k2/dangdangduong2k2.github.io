@@ -55,5 +55,5 @@ navLinks.forEach(link => {
 // Ensure the page scrolls to the top and highlights the correct section when the page is loaded
 window.addEventListener('load', () => {
     window.scrollTo(0, 0); // Scroll to the top
-    highlightActiveSection(); // Call this to ensure the correct section is highlighted after removing all active classes
+    setTimeout(highlightActiveSection, 100); // Call this to ensure the correct section is highlighted after removing all active classes
 });
