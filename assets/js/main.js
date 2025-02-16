@@ -60,16 +60,8 @@ window.addEventListener('load', () => {
 
 /*==================== LANGUAGE SELECTION NOTICE ====================*/
 function showLanguageNotice() {
-    const notice = document.createElement('div');
-    notice.id = 'language-notice';
-    notice.innerHTML = `
-        <div class="notice-content">
-            <p>Please select your language:</p>
-            <button id="lang-en">English</button>
-            <button id="lang-vi">Tiếng Việt</button>
-        </div>
-    `;
-    document.body.appendChild(notice);
+    const notice = document.getElementById('language-notice');
+    notice.style.display = 'flex';
 
     document.getElementById('lang-en').addEventListener('click', () => {
         notice.style.display = 'none';
