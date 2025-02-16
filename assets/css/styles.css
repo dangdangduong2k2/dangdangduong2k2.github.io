@@ -1,53 +1,11 @@
-/*==================== GOOGLE FONTS ====================*/
+/* GOOGLE FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-/*==================== VARIABLES CSS ====================*/
-:root {
-    --header-height: 3rem;
-
-    /*========== Colors ==========*/
-    --first-color: #4CAF50;
-    --first-color-alt: #43A047;
-    --title-color: #fff;
-    --text-color: #D4D4D4;
-    --body-color: #424242;
-
-    /*========== Font and typography ==========*/
-    --body-font: 'Roboto', sans-serif;
-
-    --big-font-size: 2.5rem;
-    --h2-font-size: 1.5rem;
-    --normal-font-size: 1rem;
-
-    /*========== Font weight ==========*/
-    --font-medium: 500;
-    --font-semi-bold: 600;
-
-    /*========== Margenes ==========*/
-    --mb-0-25: .25rem;
-    --mb-0-5: .5rem;
-    --mb-0-75: .75rem;
-    --mb-1: 1rem;
-    --mb-1-5: 1.5rem;
-    --mb-2: 2rem;
-    --mb-2-5: 2.5rem;
-    --mb-3: 3rem;
-
-    /*========== z index ==========*/
-    --z-tooltip: 10;
-    --z-fixed: 100;
-    --z-modal: 1000;
-}
-
-/* Base */
+/* BASE */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
@@ -57,68 +15,12 @@ body {
     line-height: 1.6;
 }
 
-h1, h2, h3, h4 {
-    color: var(--title-color);
-    font-weight: var(--font-semi-bold);
-}
-
-ul {
-    list-style: none;
-}
-
 a {
     text-decoration: none;
     color: #fff;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Reusable CSS Classes */
-.section {
-    padding: 2rem 0 4rem;
-}
-
-.section__title {
-    font-size: var(--h1-font-size);
-}
-
-.section__subtitle {
-    display: block;
-    font-size: var(--small-font-size);
-    margin-bottom: var(--mb-3);
-}
-
-.section__title,
-.section__subtitle {
-    text-align: center;
-}
-
-/* Layout */
-.container {
-    max-width: 1024px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 1rem;
-}
-
-.grid {
-    display: grid;
-    gap: 1.5rem;
-}
-
-.header {
-    padding: 1rem 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: transparent;
-}
-
-/* Nav */
+/* NAVIGATION */
 .nav {
     position: fixed;
     top: 0;
@@ -128,39 +30,6 @@ img {
     background-color: rgba(31, 31, 31, 0.95);
     backdrop-filter: blur(10px);
     z-index: 100;
-}
-
-.nav__logo,
-.nav__toggle {
-    color: var(--title-color);
-    font-weight: var(--font-medium);
-}
-
-.nav__logo:hover {
-    color: var(--first-color);
-}
-
-.nav__toggle {
-    font-size: 1.1rem;
-    cursor: pointer;
-}
-
-.nav__toggle:hover {
-    color: var(--first-color);
-}
-
-@media screen and (max-width: 767px) {
-    .nav__menu {
-        position: fixed;
-        bottom: -100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--body-color);
-        padding: 2rem 1.5rem 4rem;
-        box-shadow: 0 -1px 4px rgba(0,0,0,.15);
-        border-radius: 1.5rem 1.5rem 0 0;
-        transition: .3s;
-    }
 }
 
 .nav__list {
@@ -202,30 +71,7 @@ img {
     color: #00ff00;
 }
 
-.nav__icon {
-    font-size: 1.2rem;
-}
-
-.nav__close {
-    position: absolute;
-    right: 1.3rem;
-    bottom: .5rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--first-color);
-}
-
-/* Show menu */
-.show-menu {
-    bottom: 0;
-}
-
-/* Active link */
-.active-link {
-    color: var(--first-color);
-}
-
-/* Home */
+/* HOME */
 .home {
     height: 100vh;
     display: flex;
@@ -284,7 +130,6 @@ img {
     line-height: 1.8;
 }
 
-/* Buttons */
 .button {
     display: inline-block;
     background-color: transparent;
@@ -302,15 +147,4 @@ img {
     background-color: #00ff00;
     color: #1f1f1f;
     box-shadow: 0 0 30px rgba(0,255,0,0.3);
-}
-
-.button__icon {
-    font-size: 1.25rem;
-    margin-left: var(--mb-0-5);
-    transition: .3s;
-}
-
-.button--flex {
-    display: inline-flex;
-    align-items: center;
 }
