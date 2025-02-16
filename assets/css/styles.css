@@ -188,6 +188,24 @@ section {
     background-color: #1f1f1f;
 }
 
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.about-text {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
 /* Skills Section */
 .skills {
     background-color: #1f1f1f;
@@ -270,6 +288,12 @@ h2 {
 .about-image img {
     width: 100%;
     border-radius: 50%;
+}
+
+.about-text {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+    line-height: 1.8;
 }
 
 /* Skills */
@@ -468,4 +492,4 @@ footer {
     }
 }
 
-/* CSS được load */ 
+/* CSS được load */
