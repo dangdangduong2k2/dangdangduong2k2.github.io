@@ -56,7 +56,5 @@ navLinks.forEach(link => {
 window.addEventListener('load', () => {
     if(window.pageYOffset === 0) {
         document.querySelector('.nav__link[href="#home"]').classList.add('active');
-        document.querySelector('.nav__link[href="#about"]').classList.add('active');
-        document.querySelector('.nav__link[href="#projects"]').classList.add('active');
     }
 });
