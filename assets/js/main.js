@@ -55,4 +55,5 @@ navLinks.forEach(link => {
 // Highlight only the "Home" section when the page is loaded and scrolled to the top
 window.addEventListener('load', () => {
     navLinks.forEach(link => link.classList.remove('active'));
+    
 });
