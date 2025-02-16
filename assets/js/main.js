@@ -52,8 +52,9 @@ navLinks.forEach(link => {
     });
 });
 
-// Highlight section đầu tiên khi load trang và ở top
+// Highlight only the "Home" section when the page is loaded and scrolled to the top
 window.addEventListener('load', () => {
+    navLinks.forEach(link => link.classList.remove('active'));
     if(window.pageYOffset === 0) {
         document.querySelector('.nav__link[href="#home"]').classList.add('active');
     }
