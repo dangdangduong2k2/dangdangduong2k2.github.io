@@ -52,8 +52,7 @@ navLinks.forEach(link => {
     });
 });
 
-// Ensure no section is highlighted when the page is loaded and scrolled to the top
+// Highlight only the "Home" section when the page is loaded and scrolled to the top
 window.addEventListener('load', () => {
     navLinks.forEach(link => link.classList.remove('active'));
-   // Call this to ensure the correct section is highlighted after removing all active classes
 });
