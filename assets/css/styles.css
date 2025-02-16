@@ -41,78 +41,56 @@ header {
     z-index: 1000;
 }
 
-nav ul {
-    list-style: none;
+/* NAVIGATION */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 0;
+    background-color: rgba(31, 31, 31, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+.nav__list {
     display: flex;
     justify-content: center;
-    padding: 1rem;
-    gap: 2rem;
+    gap: 4rem;
+    list-style: none;
 }
 
-nav ul li {
-    position: relative;
-}
-
-nav ul li a {
-    color: var(--dark-color);
-    text-decoration: none;
-    font-weight: 600;
+.nav__link {
     font-size: 1.1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
+    font-weight: 500;
+    color: #fff;
     transition: all 0.3s ease;
-    transform-style: preserve-3d;
-    perspective: 1000px;
+    position: relative;
+    padding: 0.5rem 1rem;
 }
 
-nav ul li a:hover {
-    color: var(--primary-color);
-    background-color: rgba(46, 204, 113, 0.1);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.2);
-}
-
-nav ul li a.active {
-    color: var(--primary-color);
-    background-color: rgba(46, 204, 113, 0.1);
-}
-
-nav ul li a::after {
+.nav__link::after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 50%;
+    bottom: -5px;
+    left: 0;
     width: 0;
     height: 2px;
-    background: var(--primary-color);
-    transition: all 0.3s ease;
+    background-color: #00ff00;
+    transition: width 0.3s ease;
 }
 
-nav ul li a:hover::after {
-    width: 80%;
-    left: 10%;
+.nav__link:hover::after,
+.nav__link.active::after {
+    width: 100%;
 }
 
-/* Animation khi scroll */
-nav ul li a {
-    animation: menuFadeIn 0.5s ease forwards;
-    opacity: 0;
-    transform: translateY(-20px);
+.nav__link:hover,
+.nav__link.active {
+    color: #00ff00;
+    background-color: rgba(0, 255, 0, 0.1);
+    border-radius: 4px;
 }
-
-@keyframes menuFadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Delay cho từng menu item */
-nav ul li:nth-child(1) a { animation-delay: 0.1s; }
-nav ul li:nth-child(2) a { animation-delay: 0.2s; }
-nav ul li:nth-child(3) a { animation-delay: 0.3s; }
-nav ul li:nth-child(4) a { animation-delay: 0.4s; }
-nav ul li:nth-child(5) a { animation-delay: 0.5s; }
 
 /* Hero Section */
 .hero {

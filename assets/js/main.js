@@ -47,4 +47,44 @@ function scrollActive(){
         }
     })
 }
-window.addEventListener('scroll', scrollActive) 
+window.addEventListener('scroll', scrollActive)
+
+// Lấy tất cả các nav links
+const navLinks = document.querySelectorAll('.nav__link');
+
+// Thêm event listener cho mỗi link
+navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        // Xóa class active từ tất cả links
+        navLinks.forEach(l => l.classList.remove('active'));
+        
+        // Thêm class active vào link được click
+        this.classList.add('active');
+    });
+});
+
+// Kiểm tra vị trí scroll để highlight đúng section
+window.addEventListener('scroll', () => {
+    let current = '';
+    const sections = document.querySelectorAll('section');
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if(pageYOffset >= (sectionTop - sectionHeight/3)) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if(link.getAttribute('href').substring(1) === current) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// Set active cho Home khi load trang
+document.addEventListener('DOMContentLoaded', () => {
+    navLinks[0].classList.add('active');
+}); 
