@@ -49,42 +49,45 @@ function scrollActive(){
 }
 window.addEventListener('scroll', scrollActive)
 
-// Lấy tất cả các nav links
+// Lấy tất cả các nav links và sections
 const navLinks = document.querySelectorAll('.nav__link');
+const sections = document.querySelectorAll('section');
 
-// Thêm event listener cho mỗi link
+// Hàm để highlight active section
+function highlightActiveSection() {
+    let scrollPosition = window.scrollY;
+
+    // Kiểm tra từng section
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100; // Trừ đi một khoảng để active sớm hơn
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+
+        // Nếu scroll position nằm trong khoảng của section
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            // Xóa active từ tất cả links
+            navLinks.forEach(link => link.classList.remove('active'));
+            
+            // Thêm active vào link tương ứng
+            document.querySelector(`.nav__link[href*="${sectionId}"]`).classList.add('active');
+        }
+    });
+}
+
+// Thêm event listener cho scroll
+window.addEventListener('scroll', highlightActiveSection);
+
+// Set active cho section đầu tiên khi load trang
+document.addEventListener('DOMContentLoaded', () => {
+    highlightActiveSection();
+});
+
+// Xử lý click vào nav links
 navLinks.forEach(link => {
     link.addEventListener('click', function(e) {
-        // Xóa class active từ tất cả links
-        navLinks.forEach(l => l.classList.remove('active'));
-        
-        // Thêm class active vào link được click
-        this.classList.add('active');
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        targetSection.scrollIntoView({ behavior: 'smooth' });
     });
-});
-
-// Kiểm tra vị trí scroll để highlight đúng section
-window.addEventListener('scroll', () => {
-    let current = '';
-    const sections = document.querySelectorAll('section');
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if(pageYOffset >= (sectionTop - sectionHeight/3)) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if(link.getAttribute('href').substring(1) === current) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// Set active cho Home khi load trang
-document.addEventListener('DOMContentLoaded', () => {
-    navLinks[0].classList.add('active');
 }); 
