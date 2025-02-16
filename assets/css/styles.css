@@ -425,7 +425,7 @@ footer {
     transition: color 0.3s;
 }
 
-social-links a:hover {
+.social-links a:hover {
     color: #00ff00;
 }
 
