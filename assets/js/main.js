@@ -55,15 +55,5 @@ navLinks.forEach(link => {
 // Highlight only the "Home" section when the page is loaded and scrolled to the top
 window.addEventListener('load', () => {
     navLinks.forEach(link => link.classList.remove('active'));
-<<<<<<< HEAD
-<<<<<<< HEAD
      // Call this to ensure the correct section is highlighted after removing all active classes
-=======
-    if(window.pageYOffset === 0) {
-        document.querySelector('.nav__link[href="#home"]').classList.add('active');
-    }
->>>>>>> parent of 94d7b41 (Fix directory structure)
-=======
-    highlightActiveSection(); // Call this to ensure the correct section is highlighted after removing all active classes
->>>>>>> parent of 5ac090b (Fix directory structure)
 });
