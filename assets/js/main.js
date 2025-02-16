@@ -55,29 +55,21 @@ navLinks.forEach(link => {
 // Ensure no section is highlighted when the page is loaded and scrolled to the top
 window.addEventListener('load', () => {
     navLinks.forEach(link => link.classList.remove('active'));
-    console.log('Page loaded, calling showLanguageNotice'); // Debug log
     showLanguageNotice(); // Show language selection notice
 });
 
 /*==================== LANGUAGE SELECTION NOTICE ====================*/
 function showLanguageNotice() {
     const notice = document.getElementById('language-notice');
-    if (notice) {
-        console.log('Language notice element found, displaying it'); // Debug log
-        notice.style.display = 'flex';
-    } else {
-        console.error('Language notice element not found'); // Error log
-    }
+    notice.style.display = 'flex';
 
     document.getElementById('lang-en').addEventListener('click', () => {
         notice.style.display = 'none';
-        console.log('English selected, hiding notice'); // Debug log
         // Add logic to switch to English
     });
 
     document.getElementById('lang-vi').addEventListener('click', () => {
         notice.style.display = 'none';
-        console.log('Vietnamese selected, hiding notice'); // Debug log
         // Add logic to switch to Vietnamese
     });
 }
