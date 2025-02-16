@@ -1,6 +1,57 @@
-/* Thay đổi đường dẫn background trong .hero */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2ecc71;
+    --secondary-color: #27ae60;
+    --dark-color: #2c3e50;
+    --light-color: #ecf0f1;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    gap: 2rem;
+}
+
+nav ul li a {
+    color: var(--dark-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Hero Section */
 .hero {
-    /* ... */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/hero-bg.jpg');
-    /* ... */
-} 
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+/* Thêm các style khác từ file style.css cũ */ 
