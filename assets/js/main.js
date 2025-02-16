@@ -55,40 +55,4 @@ navLinks.forEach(link => {
 // Ensure no section is highlighted when the page is loaded and scrolled to the top
 window.addEventListener('load', () => {
     navLinks.forEach(link => link.classList.remove('active'));
-    console.log('Page loaded, calling showLanguageNotice'); // Debug log
-    showLanguageNotice(); // Show language selection notice
 });
-
-/*==================== LANGUAGE SELECTION NOTICE ====================*/
-function showLanguageNotice() {
-    const notice = document.getElementById('language-notice');
-    if (notice) {
-        console.log('Language notice element found, displaying it'); // Debug log
-        notice.style.display = 'flex';
-    } else {
-        console.error('Language notice element not found'); // Error log
-    }
-
-    const langEnButton = document.getElementById('lang-en');
-    const langViButton = document.getElementById('lang-vi');
-
-    if (langEnButton) {
-        langEnButton.addEventListener('click', () => {
-            notice.style.display = 'none';
-            console.log('English selected, hiding notice'); // Debug log
-            // Add logic to switch to English
-        });
-    } else {
-        console.error('English button not found'); // Error log
-    }
-
-    if (langViButton) {
-        langViButton.addEventListener('click', () => {
-            notice.style.display = 'none';
-            console.log('Vietnamese selected, hiding notice'); // Debug log
-            // Add logic to switch to Vietnamese
-        });
-    } else {
-        console.error('Vietnamese button not found'); // Error log
-    }
-}
