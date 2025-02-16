@@ -55,29 +55,5 @@ navLinks.forEach(link => {
 // Highlight only the "Home" section when the page is loaded and scrolled to the top
 window.addEventListener('load', () => {
     navLinks.forEach(link => link.classList.remove('active'));
-    showLanguageNotice(); // Show language selection notice
+     // Call this to ensure the correct section is highlighted after removing all active classes
 });
-
-/*==================== LANGUAGE SELECTION NOTICE ====================*/
-function showLanguageNotice() {
-    const notice = document.createElement('div');
-    notice.id = 'language-notice';
-    notice.innerHTML = `
-        <div class="notice-content">
-            <p>Please select your language:</p>
-            <button id="lang-en">English</button>
-            <button id="lang-vi">Tiếng Việt</button>
-        </div>
-    `;
-    document.body.appendChild(notice);
-
-    document.getElementById('lang-en').addEventListener('click', () => {
-        document.body.removeChild(notice);
-        // Add logic to switch to English
-    });
-
-    document.getElementById('lang-vi').addEventListener('click', () => {
-        document.body.removeChild(notice);
-        // Add logic to switch to Vietnamese
-    });
-}
