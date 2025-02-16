@@ -98,55 +98,85 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
+    background-color: #1f1f1f;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(0,255,0,0.1) 0%, rgba(31,31,31,0) 70%);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .hero-content {
     text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-    white-space: nowrap;
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 1rem;
 }
 
-.greeting, .highlight {
-    display: inline-flex;
-    align-items: center;
+.greeting {
+    color: #fff;
+}
+
+.highlight {
+    color: #00ff00;
+    text-shadow: 0 0 20px rgba(0,255,0,0.5);
 }
 
 .subtitle {
     font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    color: var(--primary-color);
+    color: #00ff00;
+    margin-bottom: 2rem;
     font-weight: 500;
+    opacity: 0.9;
 }
 
 .description {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.8;
 }
 
-.highlight {
-    color: var(--primary-color);
+.cta-button {
     display: inline-block;
+    background-color: transparent;
+    color: #00ff00;
+    padding: 1rem 3rem;
+    border: 2px solid #00ff00;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0,255,0,0.1);
+}
+
+.cta-button:hover {
+    background-color: #00ff00;
+    color: #1f1f1f;
+    box-shadow: 0 0 30px rgba(0,255,0,0.3);
 }
 
 /* Sections - Chung */
