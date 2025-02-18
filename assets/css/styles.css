@@ -479,7 +479,11 @@ footer {
     color: #00ff00;
 }
 
-/* Timeline */
+/* Experience Section */
+.experience {
+    background-color: #1f1f1f;
+}
+
 .timeline {
     position: relative;
     margin: 2rem 0;
