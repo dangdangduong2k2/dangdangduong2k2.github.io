@@ -73,13 +73,26 @@ modalLinks.forEach(link => {
 
 closeButtons.forEach(button => {
     button.addEventListener('click', function() {
-        this.closest('.modal').classList.remove('show-modal');
+        const modal = this.closest('.modal');
+        modal.classList.remove('show-modal');
+        // Dừng video khi modal đóng
+        const iframe = modal.querySelector('iframe');
+        if (iframe) {
+            const src = iframe.src;
+            iframe.src = src; // Reset src để dừng video
+        }
     });
 });
 
 window.addEventListener('click', function(e) {
     if (e.target.classList.contains('modal')) {
         e.target.classList.remove('show-modal');
+        // Dừng video khi modal đóng
+        const iframe = e.target.querySelector('iframe');
+        if (iframe) {
+            const src = iframe.src;
+            iframe.src = src; // Reset src để dừng video
+        }
     }
 });
 
