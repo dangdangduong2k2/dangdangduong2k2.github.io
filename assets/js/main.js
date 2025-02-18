@@ -79,7 +79,8 @@ closeButtons.forEach(button => {
         const iframe = modal.querySelector('iframe');
         if (iframe) {
             const src = iframe.src;
-            iframe.src = src; // Reset src để dừng video
+            iframe.src = ''; // Reset src để dừng video
+            iframe.src = src; // Đặt lại src để video có thể phát lại khi mở modal
         }
     });
 });
@@ -91,7 +92,8 @@ window.addEventListener('click', function(e) {
         const iframe = e.target.querySelector('iframe');
         if (iframe) {
             const src = iframe.src;
-            iframe.src = src; // Reset src để dừng video
+            iframe.src = ''; // Reset src để dừng video
+            iframe.src = src; // Đặt lại src để video có thể phát lại khi mở modal
         }
     }
 });
