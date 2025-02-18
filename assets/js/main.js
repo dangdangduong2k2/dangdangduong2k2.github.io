@@ -57,3 +57,28 @@ window.addEventListener('load', () => {
     window.scrollTo(0, 0); // Scroll to the top
     highlightActiveSection(); // Call this to ensure the correct section is highlighted after removing all active classes
 });
+
+// Modal functionality
+const modals = document.querySelectorAll('.modal');
+const modalLinks = document.querySelectorAll('.project-link');
+const closeButtons = document.querySelectorAll('.close');
+
+modalLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const modalId = this.getAttribute('data-modal');
+        document.getElementById(modalId).classList.add('show-modal');
+    });
+});
+
+closeButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        this.closest('.modal').classList.remove('show-modal');
+    });
+});
+
+window.addEventListener('click', function(e) {
+    if (e.target.classList.contains('modal')) {
+        e.target.classList.remove('show-modal');
+    }
+});
