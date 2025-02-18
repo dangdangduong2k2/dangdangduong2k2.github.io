@@ -82,3 +82,26 @@ window.addEventListener('click', function(e) {
         e.target.classList.remove('show-modal');
     }
 });
+
+// Mở và đóng modal
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
+}
+
+document.querySelectorAll('.project-link').forEach(link => {
+    link.addEventListener('click', function(event) {
+        event.preventDefault();
+        const modalId = this.getAttribute('data-modal');
+        document.getElementById(modalId).style.display = "block";
+    });
+});
+
+// Đóng modal khi nhấn ra ngoài modal
+window.onclick = function(event) {
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    });
+}
