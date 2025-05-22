@@ -127,9 +127,12 @@
 
     <!-- Projects -->
     <section id="projects" class="portfolio">
-        <div class="container">
+        <div class="container" style="position:relative;">
             <h2>Dự án</h2>
-            <div class="project-grid">
+            <button class="project-arrow left" type="button" onclick="slideProjects(-1)" aria-label="Previous projects">&lt;</button>
+            <button class="project-arrow right" type="button" onclick="slideProjects(1)" aria-label="Next projects">&gt;</button>
+            <div class="project-grid" id="projectGrid">
+                <!-- Các project-card sẽ tự động xếp hàng ngang nếu CSS dùng flex hoặc grid -->
                 <div class="project-card">
                     <img src="assets/images/project1.jpg" alt="Dự án 1">
                     <h3>Dự án 1</h3>
@@ -262,16 +265,7 @@
         <p>&copy; 2024 - DuongPort</p>
     </footer>
 
-    <!-- Language Selection Notice -->
-    <div id="language-notice">
-        <div class="notice-content">
-            <p>Please select your language:</p>
-            <button id="lang-en">English</button>
-            <button id="lang-vi">Tiếng Việt</button>
-        </div>
-    </div>
-
     <!-- Main JS -->
-    <script src="assets/js/main.js"></script>
+    <script src="/assets/js/main.js"></script>
 </body>
 </html>

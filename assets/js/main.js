@@ -73,50 +73,33 @@ modalLinks.forEach(link => {
 
 closeButtons.forEach(button => {
     button.addEventListener('click', function() {
-        const modal = this.closest('.modal');
-        modal.classList.remove('show-modal');
-        // Dừng video khi modal đóng
-        const iframe = modal.querySelector('iframe');
-        if (iframe) {
-            const src = iframe.src;
-            iframe.src = ''; // Reset src để dừng video
-            iframe.src = src; // Đặt lại src để video có thể phát lại khi mở modal
-        }
+        this.closest('.modal').classList.remove('show-modal');
     });
 });
 
 window.addEventListener('click', function(e) {
     if (e.target.classList.contains('modal')) {
         e.target.classList.remove('show-modal');
-        // Dừng video khi modal đóng
-        const iframe = e.target.querySelector('iframe');
-        if (iframe) {
-            const src = iframe.src;
-            iframe.src = ''; // Reset src để dừng video
-            iframe.src = src; // Đặt lại src để video có thể phát lại khi mở modal
-        }
     }
 });
 
-// Mở và đóng modal
-function closeModal(modalId) {
-    document.getElementById(modalId).style.display = "none";
-}
-
-document.querySelectorAll('.project-link').forEach(link => {
-    link.addEventListener('click', function(event) {
-        event.preventDefault();
-        const modalId = this.getAttribute('data-modal');
-        document.getElementById(modalId).style.display = "block";
-    });
-});
-
-// Đóng modal khi nhấn ra ngoài modal
-window.onclick = function(event) {
-    const modals = document.querySelectorAll('.modal');
-    modals.forEach(modal => {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
+window.slideProjects = function(direction) {
+    const grid = document.getElementById('projectGrid');
+    if (!grid) return;
+    const card = grid.querySelector('.project-card');
+    if (!card) return;
+    let gap = 32;
+    try {
+        const style = window.getComputedStyle(grid);
+        gap = parseInt(style.gap) || 32;
+    } catch (e) {}
+    // Tính số lượng card hiển thị vừa đủ trên 1 hàng
+    const gridWidth = grid.offsetWidth;
+    const cardWidth = card.offsetWidth + gap;
+    const visibleCards = Math.floor(gridWidth / cardWidth) || 1;
+    const scrollAmount = cardWidth * visibleCards;
+    grid.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
     });
 }
