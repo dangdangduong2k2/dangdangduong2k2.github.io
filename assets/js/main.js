@@ -93,13 +93,19 @@ window.slideProjects = function(direction) {
         const style = window.getComputedStyle(grid);
         gap = parseInt(style.gap) || 32;
     } catch (e) {}
-    // Tính số lượng card hiển thị vừa đủ trên 1 hàng
     const gridWidth = grid.offsetWidth;
     const cardWidth = card.offsetWidth + gap;
     const visibleCards = Math.floor(gridWidth / cardWidth) || 1;
     const scrollAmount = cardWidth * visibleCards;
-    grid.scrollBy({
-        left: direction * scrollAmount,
-        behavior: 'smooth'
-    });
+    const maxScroll = grid.scrollWidth - grid.clientWidth;
+
+    if (direction < 0) {
+        let newScroll = grid.scrollLeft + direction * scrollAmount;
+        if (newScroll < 0) newScroll = 0;
+        grid.scrollTo({ left: newScroll, behavior: 'smooth' });
+    } else {
+        let newScroll = grid.scrollLeft + direction * scrollAmount;
+        if (newScroll > maxScroll) newScroll = maxScroll;
+        grid.scrollTo({ left: newScroll, behavior: 'smooth' });
+    }
 }

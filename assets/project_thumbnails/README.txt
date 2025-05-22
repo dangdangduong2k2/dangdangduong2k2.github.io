@@ -1,0 +1,3 @@
+// Đặt các ảnh thumbnail dự án vào thư mục này.
+// Để tối ưu hiển thị, bạn nên resize ảnh về kích thước 320x200px (hoặc tỷ lệ gần nhất).
+// Đặt tên file là số thứ tự dự án, ví dụ: 1.jpg, 2.jpg, 3.png, ...

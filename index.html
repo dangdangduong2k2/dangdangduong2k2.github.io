@@ -129,105 +129,62 @@
     <section id="projects" class="portfolio">
         <div class="container" style="position:relative;">
             <h2>Dự án</h2>
-            <button class="project-arrow left" type="button" onclick="slideProjects(-1)" aria-label="Previous projects">&lt;</button>
-            <button class="project-arrow right" type="button" onclick="slideProjects(1)" aria-label="Next projects">&gt;</button>
-            <div class="project-grid" id="projectGrid">
-                <!-- Các project-card sẽ tự động xếp hàng ngang nếu CSS dùng flex hoặc grid -->
-                <div class="project-card">
-                    <img src="assets/images/project1.jpg" alt="Dự án 1">
-                    <h3>Dự án 1</h3>
-                    <p>Mô tả ngắn về dự án 1</p>
-                    <a href="#" class="project-link" data-modal="modal1">Xem chi tiết</a>
+            <div style="display: flex; align-items: center; position: relative;">
+                <button class="project-arrow left" type="button" onclick="slideProjects(-1)" aria-label="Previous projects">&lt;</button>
+                <div class="project-grid" id="projectGrid" style="flex:1; position:relative;">
+                    <div class="project-card">
+                        <div class="project-card-image">
+                            <img src="assets/project_thumbnails/1.jpg" alt="Tên dự án 1">
+                        </div>
+                        <div class="project-card-desc">
+                            <h3>Tên dự án 1</h3>
+                            <p>Mô tả ngắn về dự án 1</p>
+                        </div>
+                        <div class="project-card-footer">
+                            <a href="#" class="project-link">Xem chi tiết</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-card-image">
+                            <img src="assets/project_thumbnails/2.jpg" alt="Tên dự án 2">
+                        </div>
+                        <div class="project-card-desc">
+                            <h3>Tên dự án 2</h3>
+                            <p>Mô tả ngắn về dự án 2</p>
+                        </div>
+                        <div class="project-card-footer">
+                            <a href="#" class="project-link">Xem chi tiết</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-card-image">
+                            <img src="assets/project_thumbnails/3.png" alt="Tên dự án 3">
+                        </div>
+                        <div class="project-card-desc">
+                            <h3>Tên dự án 3</h3>
+                            <p>Mô tả ngắn về dự án 3</p>
+                        </div>
+                        <div class="project-card-footer">
+                            <a href="#" class="project-link">Xem chi tiết</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-card-image">
+                            <img src="assets/project_thumbnails/4.jpg" alt="Tên dự án 4">
+                        </div>
+                        <div class="project-card-desc">
+                            <h3>Tên dự án 4</h3>
+                            <p>Mô tả ngắn về dự án 4</p>
+                        </div>
+                        <div class="project-card-footer">
+                            <a href="#" class="project-link">Xem chi tiết</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <img src="assets/images/project2.jpg" alt="Dự án 2">
-                    <h3>Dự án 2</h3>
-                    <p>Mô tả ngắn về dự án 2</p>
-                    <a href="#" class="project-link" data-modal="modal2">Xem chi tiết</a>
-                </div>
-                <div class="project-card">
-                    <img src="assets/images/project3.jpg" alt="Dự án 3">
-                    <h3>Dự án 3</h3>
-                    <p>Mô tả ngắn về dự án 3</p>
-                    <a href="#" class="project-link" data-modal="modal3">Xem chi tiết</a>
-                </div>
-                <div class="project-card">
-                    <img src="assets/images/project4.jpg" alt="Dự án 4">
-                    <h3>Dự án 4</h3>
-                    <p>Mô tả ngắn về dự án 4</p>
-                    <a href="#" class="project-link" data-modal="modal4">Xem chi tiết</a>
-                </div>
-                <div class="project-card">
-                    <img src="assets/images/project5.jpg" alt="Dự án 5">
-                    <h3>Dự án 5</h3>
-                    <p>Mô tả ngắn về dự án 5</p>
-                    <a href="#" class="project-link" data-modal="modal5">Xem chi tiết</a>
-                </div>
-                <div class="project-card">
-                    <img src="assets/images/project6.jpg" alt="Dự án 6">
-                    <h3>Dự án 6</h3>
-                    <p>Mô tả ngắn về dự án 6</p>
-                    <a href="#" class="project-link" data-modal="modal6">Xem chi tiết</a>
-                </div>
+                <button class="project-arrow right" type="button" onclick="slideProjects(1)" aria-label="Next projects">&gt;</button>
             </div>
         </div>
     </section>
-
-    <!-- Modals for Projects -->
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal1')">&times;</span>
-            <img src="assets/images/project1.jpg" alt="Dự án 1">
-            <h3>Dự án 1</h3>
-            <p>Mô tả chi tiết về dự án 1</p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/kVLLbjgyNrY" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </div>
-    <div id="modal2" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal2')">&times;</span>
-            <img src="assets/images/project2.jpg" alt="Dự án 2">
-            <h3>Dự án 2</h3>
-            <p>Mô tả chi tiết về dự án 2</p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/kVLLbjgyNrY" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </div>
-    <div id="modal3" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal3')">&times;</span>
-            <img src="assets/images/project3.jpg" alt="Dự án 3">
-            <h3>Dự án 3</h3>
-            <p>Mô tả chi tiết về dự án 3</p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/kVLLbjgyNrY" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </div>
-    <div id="modal4" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal4')">&times;</span>
-            <img src="assets/images/project4.jpg" alt="Dự án 4">
-            <h3>Dự án 4</h3>
-            <p>Mô tả chi tiết về dự án 4</p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/kVLLbjgyNrY" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </div>
-    <div id="modal5" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal5')">&times;</span>
-            <img src="assets/images/project5.jpg" alt="Dự án 5">
-            <h3>Dự án 5</h3>
-            <p>Mô tả chi tiết về dự án 5</p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/kVLLbjgyNrY" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </div>
-    <div id="modal6" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal6')">&times;</span>
-            <img src="assets/images/project6.jpg" alt="Dự án 6">
-            <h3>Dự án 6</h3>
-            <p>Mô tả chi tiết về dự án 6</p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/kVLLbjgyNrY" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </div>
 
     <!-- Contact -->
     <section id="contact" class="contact">
