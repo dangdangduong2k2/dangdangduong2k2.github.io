@@ -129,59 +129,114 @@
     <section id="projects" class="portfolio">
         <div class="container" style="position:relative;">
             <h2>Dự án</h2>
-            <div style="display: flex; align-items: center; position: relative;">
-                <button class="project-arrow left" type="button" onclick="slideProjects(-1)" aria-label="Previous projects">&lt;</button>
-                <div class="project-grid" id="projectGrid" style="flex:1; position:relative;">
-                    <div class="project-card">
-                        <div class="project-card-image">
-                            <img src="assets/project_thumbnails/1.jpg" alt="Tên dự án 1">
-                        </div>
-                        <div class="project-card-desc">
-                            <h3>Tên dự án 1</h3>
-                            <p>Mô tả ngắn về dự án 1</p>
-                        </div>
-                        <div class="project-card-footer">
-                            <a href="#" class="project-link">Xem chi tiết</a>
-                        </div>
+            <button class="project-arrow left" type="button" onclick="slideProjects(-1)" aria-label="Previous projects">&lt;</button>
+            <button class="project-arrow right" type="button" onclick="slideProjects(1)" aria-label="Next projects">&gt;</button>
+            <div class="project-grid" id="projectGrid">
+                <!-- Dự án 1 -->
+                <div class="project-card">
+                    <div class="project-card-image">
+                        <img src="assets/project_thumbnails/1.jpg" alt="Mạch điều khiển chu kỳ bơm theo lưu lượng">
                     </div>
-                    <div class="project-card">
-                        <div class="project-card-image">
-                            <img src="assets/project_thumbnails/2.jpg" alt="Tên dự án 2">
-                        </div>
-                        <div class="project-card-desc">
-                            <h3>Tên dự án 2</h3>
-                            <p>Mô tả ngắn về dự án 2</p>
-                        </div>
-                        <div class="project-card-footer">
-                            <a href="#" class="project-link">Xem chi tiết</a>
-                        </div>
+                    <div class="project-card-desc">
+                        <h3>Mạch điều khiển chu kỳ bơm theo lưu lượng<br>
+                            <span style="font-size:0.8em;font-weight:400;">(CÔNG TY TNHH SUMMIT POLYMERS VIETNAM)</span>
+                        </h3>
+                        <p>Sử dụng tín hiệu digital báo dung tích của bồn chất lỏng để điều khiển motor</p>
                     </div>
-                    <div class="project-card">
-                        <div class="project-card-image">
-                            <img src="assets/project_thumbnails/3.png" alt="Tên dự án 3">
-                        </div>
-                        <div class="project-card-desc">
-                            <h3>Tên dự án 3</h3>
-                            <p>Mô tả ngắn về dự án 3</p>
-                        </div>
-                        <div class="project-card-footer">
-                            <a href="#" class="project-link">Xem chi tiết</a>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-card-image">
-                            <img src="assets/project_thumbnails/4.jpg" alt="Tên dự án 4">
-                        </div>
-                        <div class="project-card-desc">
-                            <h3>Tên dự án 4</h3>
-                            <p>Mô tả ngắn về dự án 4</p>
-                        </div>
-                        <div class="project-card-footer">
-                            <a href="#" class="project-link">Xem chi tiết</a>
-                        </div>
+                    <div class="project-card-footer">
+                        <a href="#" class="project-link">Xem chi tiết</a>
                     </div>
                 </div>
-                <button class="project-arrow right" type="button" onclick="slideProjects(1)" aria-label="Next projects">&gt;</button>
+                <!-- Dự án 2 -->
+                <div class="project-card">
+                    <div class="project-card-image">
+                        <img src="assets/project_thumbnails/2.jpg" alt="Mạch baby care dành cho thang máy">
+                    </div>
+                    <div class="project-card-desc">
+                        <h3>Mạch baby care dành cho thang máy<br>
+                            <span style="font-size:0.8em;font-weight:400;">(Công ty TNHH Kỹ Thuật Tự Động Việt Đông Hải)</span>
+                        </h3>
+                        <p>Đọc tín hiệu từ các cảm biến trên thang máy để trả về tín hiệu an toàn cho bộ điều khiển chính</p>
+                    </div>
+                    <div class="project-card-footer">
+                        <a href="#" class="project-link">Xem chi tiết</a>
+                    </div>
+                </div>
+                <!-- Dự án 3 -->
+                <div class="project-card">
+                    <div class="project-card-image">
+                        <img src="assets/project_thumbnails/3.png" alt="Mạch hẹn giờ máy lạnh container đông lạnh">
+                    </div>
+                    <div class="project-card-desc">
+                        <h3>Mạch hẹn giờ máy lạnh container đông lạnh<br>
+                            <span style="font-size:0.8em;font-weight:400;">(Thuần Phong Vlog)</span>
+                        </h3>
+                        <p>Đọc tín hiệu từ máy lạnh trên container để hẹn giờ xả đá, chạy lạnh hỗ trợ tài xế</p>
+                    </div>
+                    <div class="project-card-footer">
+                        <a href="#" class="project-link">Xem chi tiết</a>
+                    </div>
+                </div>
+                <!-- Dự án 4 -->
+                <div class="project-card">
+                    <div class="project-card-image">
+                        <img src="assets/project_thumbnails/4.jpg" alt="Mạch điều khiển động cơ BLDC">
+                    </div>
+                    <div class="project-card-desc">
+                        <h3>Mạch điều khiển động cơ BLDC<br>
+                            <span style="font-size:0.8em;font-weight:400;">(Dự án cá nhân)</span>
+                        </h3>
+                        <p>Điều khiển tốc độ và vị trí động cơ không chổi than sử dụng FOC</p>
+                    </div>
+                    <div class="project-card-footer">
+                        <a href="#" class="project-link">Xem chi tiết</a>
+                    </div>
+                </div>
+                <!-- Dự án 5 -->
+                <div class="project-card">
+                    <div class="project-card-image">
+                        <img src="assets/project_thumbnails/5.png" alt="Mạch điều khiển môi trường nuôi kiến">
+                    </div>
+                    <div class="project-card-desc">
+                        <h3>Mạch điều khiển môi trường nuôi kiến<br>
+                            <span style="font-size:0.8em;font-weight:400;">(Dự án cá nhân)</span>
+                        </h3>
+                        <p>Đọc tín hiệu từ cảm biến điều khiển nhiệt độ, đảm bảo môi trường cho kiến</p>
+                    </div>
+                    <div class="project-card-footer">
+                        <a href="#" class="project-link">Xem chi tiết</a>
+                    </div>
+                </div>
+                <!-- Dự án 6 -->
+                <div class="project-card">
+                    <div class="project-card-image">
+                        <img src="assets/project_thumbnails/6.png" alt="Robot đánh cờ">
+                    </div>
+                    <div class="project-card-desc">
+                        <h3>Robot đánh cờ<br>
+                            <span style="font-size:0.8em;font-weight:400;">(Đồ án môn học)</span>
+                        </h3>
+                        <p>Đọc tín hiệu từ cảm biến gửi về cho máy tính, và ra lệnh cho robot di chuyển quân cờ</p>
+                    </div>
+                    <div class="project-card-footer">
+                        <a href="#" class="project-link">Xem chi tiết</a>
+                    </div>
+                </div>
+                <!-- Dự án 7 -->
+                <div class="project-card">
+                    <div class="project-card-image">
+                        <img src="assets/project_thumbnails/7.png" alt="Robot tự hành theo QR code">
+                    </div>
+                    <div class="project-card-desc">
+                        <h3>Robot tự hành theo QR code<br>
+                            <span style="font-size:0.8em;font-weight:400;">(Đồ án môn học)</span>
+                        </h3>
+                        <p>Sử dụng dữ liệu hình ảnh để xác định vị trí khoảng cách trong không gian để di chuyển</p>
+                    </div>
+                    <div class="project-card-footer">
+                        <a href="#" class="project-link">Xem chi tiết</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

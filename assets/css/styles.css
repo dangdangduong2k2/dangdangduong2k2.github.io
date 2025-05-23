@@ -364,16 +364,16 @@ section {
 }
 
 .project-card-desc h3 {
-    font-size: 1.1rem;
-    margin: 0 0 0.3rem 0;
+    font-size: 0.85rem;
+    margin: 0 0 0.2rem 0;
     color: var(--primary-color);
 }
 
 .project-card-desc p {
-    font-size: 0.97rem;
+    font-size: 0.78rem;
     color: var(--text-color);
     margin: 0;
-    line-height: 1.4;
+    line-height: 1.2;
     flex: 1;
 }
 
@@ -646,16 +646,16 @@ h2 {
 }
 
 .project-card-desc h3 {
-    font-size: 1.1rem;
-    margin: 0 0 0.3rem 0;
+    font-size: 0.85rem;
+    margin: 0 0 0.2rem 0;
     color: var(--primary-color);
 }
 
 .project-card-desc p {
-    font-size: 0.97rem;
+    font-size: 0.78rem;
     color: var(--text-color);
     margin: 0;
-    line-height: 1.4;
+    line-height: 1.2;
     flex: 1;
 }
 
@@ -894,9 +894,9 @@ h2 {
     color: var(--primary-color);
     border: none;
     border-radius: 0;
-    width: 72px;
-    height: 72px;
-    font-size: 4rem;
+    width: 48px;
+    height: 48px;
+    font-size: 2.5rem;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -904,24 +904,14 @@ h2 {
     box-shadow: none;
     transition: color 0.2s;
     padding: 0 10px;
-    pointer-events: auto;
 }
 .project-arrow.left {
-    left: -100px; /* rộng ra ngoài hơn nữa */
+    left: -60px;
 }
 .project-arrow.right {
-    right: -100px; /* rộng ra ngoài hơn nữa */
+    right: -60px;
 }
-@media (max-width: 900px) {
-    .project-arrow {
-        width: 48px;
-        height: 48px;
-        font-size: 2.5rem;
-    }
-    .project-arrow.left {
-        left: 0;
-    }
-    .project-arrow.right {
-        right: 0;
-    }
+.project-arrow:hover {
+    color: var(--secondary-color);
+    background: none;
 }

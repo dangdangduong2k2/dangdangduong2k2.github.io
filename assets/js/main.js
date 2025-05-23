@@ -88,24 +88,15 @@ window.slideProjects = function(direction) {
     if (!grid) return;
     const card = grid.querySelector('.project-card');
     if (!card) return;
-    let gap = 32;
+    let gap = 0;
     try {
         const style = window.getComputedStyle(grid);
-        gap = parseInt(style.gap) || 32;
+        gap = parseInt(style.columnGap || style.gap) || 0;
     } catch (e) {}
-    const gridWidth = grid.offsetWidth;
     const cardWidth = card.offsetWidth + gap;
-    const visibleCards = Math.floor(gridWidth / cardWidth) || 1;
-    const scrollAmount = cardWidth * visibleCards;
+    let newScroll = grid.scrollLeft + direction * cardWidth;
+    if (newScroll < 0) newScroll = 0;
     const maxScroll = grid.scrollWidth - grid.clientWidth;
-
-    if (direction < 0) {
-        let newScroll = grid.scrollLeft + direction * scrollAmount;
-        if (newScroll < 0) newScroll = 0;
-        grid.scrollTo({ left: newScroll, behavior: 'smooth' });
-    } else {
-        let newScroll = grid.scrollLeft + direction * scrollAmount;
-        if (newScroll > maxScroll) newScroll = maxScroll;
-        grid.scrollTo({ left: newScroll, behavior: 'smooth' });
-    }
+    if (newScroll > maxScroll) newScroll = maxScroll;
+    grid.scrollTo({ left: newScroll, behavior: 'smooth' });
 }
