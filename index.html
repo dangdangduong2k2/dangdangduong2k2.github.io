@@ -277,7 +277,87 @@
         <p>&copy; 2024 - DuongPort</p>
     </footer>
 
+    <!-- Popup khung trắng, ẩn mặc định -->
+    <div id="popup-overlay" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.3);align-items:center;justify-content:center;z-index:1000;">
+        <div id="popup-content" style="background:#fff;padding:32px;width:800px;height:800px;max-width:90vw;max-height:90vh;box-sizing:border-box;border-radius:8px;box-shadow:0 2px 16px rgba(0,0,0,0.2);position:relative;display:flex;flex-direction:column;">
+            <button onclick="document.getElementById('popup-overlay').style.display='none'" style="position:absolute;top:8px;right:12px;background:none;border:none;font-size:20px;cursor:pointer;">&times;</button>
+            <div id="popup-detail-content" style="overflow:auto;width:100%;height:100%;padding-top:32px;">
+                <!-- Nội dung chi tiết sẽ được đặt ở đây -->
+            </div>
+        </div>
+    </div>
+
     <!-- Main JS -->
     <script src="/assets/js/main.js"></script>
+    <script>
+    // Nội dung chi tiết cho từng dự án
+    const projectDetails = [
+        {
+            title: "Mạch điều khiển chu kỳ bơm theo lưu lượng",
+            content: `<b>Khách hàng:</b> CÔNG TY TNHH SUMMIT POLYMERS VIETNAM<br>
+            <b>Mô tả:</b> Sử dụng tín hiệu digital báo dung tích của bồn chất lỏng để điều khiển motor. Hệ thống đảm bảo bơm hoạt động theo chu kỳ dựa trên mức chất lỏng thực tế, giúp tối ưu hóa quá trình vận hành và tiết kiệm năng lượng.<br>
+            <b>Kỹ thuật:</b> Thiết kế mạch điều khiển, lập trình vi điều khiển, xử lý tín hiệu digital.<br>
+            <b>Kết quả:</b> Hệ thống hoạt động ổn định, đáp ứng yêu cầu sản xuất thực tế.`
+        },
+        {
+            title: "Mạch baby care dành cho thang máy",
+            content: `<b>Khách hàng:</b> Công ty TNHH Kỹ Thuật Tự Động Việt Đông Hải<br>
+            <b>Mô tả:</b> Đọc tín hiệu từ các cảm biến trên thang máy để trả về tín hiệu an toàn cho bộ điều khiển chính. Đảm bảo an toàn cho trẻ nhỏ khi sử dụng thang máy.<br>
+            <b>Kỹ thuật:</b> Thiết kế mạch cảm biến, lập trình xử lý tín hiệu, tích hợp hệ thống an toàn.<br>
+            <b>Kết quả:</b> Được ứng dụng thực tế, nâng cao độ an toàn cho hệ thống thang máy.`
+        },
+        {
+            title: "Mạch hẹn giờ máy lạnh container đông lạnh",
+            content: `<b>Khách hàng:</b> Thuần Phong Vlog<br>
+            <b>Mô tả:</b> Đọc tín hiệu từ máy lạnh trên container để hẹn giờ xả đá, chạy lạnh hỗ trợ tài xế. Giúp tối ưu hóa quá trình vận hành máy lạnh, tiết kiệm điện năng.<br>
+            <b>Kỹ thuật:</b> Thiết kế mạch điều khiển thời gian, lập trình vi điều khiển, giao tiếp với thiết bị lạnh.<br>
+            <b>Kết quả:</b> Thiết bị hoạt động hiệu quả, hỗ trợ tốt cho tài xế container.`
+        },
+        {
+            title: "Mạch điều khiển động cơ BLDC",
+            content: `<b>Dự án cá nhân</b><br>
+            <b>Mô tả:</b> Điều khiển tốc độ và vị trí động cơ không chổi than sử dụng FOC (Field Oriented Control). Ứng dụng trong các hệ thống tự động hóa và robot.<br>
+            <b>Kỹ thuật:</b> Thiết kế mạch công suất, lập trình thuật toán FOC, điều khiển động cơ BLDC.<br>
+            <b>Kết quả:</b> Động cơ vận hành mượt mà, kiểm soát chính xác tốc độ và vị trí.`
+        },
+        {
+            title: "Mạch điều khiển môi trường nuôi kiến",
+            content: `<b>Dự án cá nhân</b><br>
+            <b>Mô tả:</b> Đọc tín hiệu từ cảm biến điều khiển nhiệt độ, đảm bảo môi trường cho kiến sinh trưởng tốt.<br>
+            <b>Kỹ thuật:</b> Thiết kế mạch cảm biến nhiệt độ, lập trình điều khiển tự động.<br>
+            <b>Kết quả:</b> Môi trường nuôi kiến được kiểm soát ổn định, hỗ trợ nghiên cứu sinh học.`
+        },
+        {
+            title: "Robot đánh cờ",
+            content: `<b>Đồ án môn học</b><br>
+            <b>Mô tả:</b> Đọc tín hiệu từ cảm biến gửi về cho máy tính, và ra lệnh cho robot di chuyển quân cờ. Ứng dụng xử lý ảnh và điều khiển robot.<br>
+            <b>Kỹ thuật:</b> Lập trình xử lý tín hiệu cảm biến, điều khiển động cơ, giao tiếp máy tính.<br>
+            <b>Kết quả:</b> Robot thực hiện chính xác các nước đi, hỗ trợ học tập và nghiên cứu.`
+        },
+        {
+            title: "Robot tự hành theo QR code",
+            content: `<b>Đồ án môn học</b><br>
+            <b>Mô tả:</b> Sử dụng dữ liệu hình ảnh để xác định vị trí khoảng cách trong không gian để di chuyển. Robot tự động nhận diện và di chuyển theo mã QR.<br>
+            <b>Kỹ thuật:</b> Xử lý ảnh, lập trình điều khiển robot, nhận diện QR code.<br>
+            <b>Kết quả:</b> Robot di chuyển chính xác theo lộ trình định sẵn bằng QR code.`
+        }
+    ];
+
+    // Hiện popup khi click bất kỳ nút "Xem chi tiết"
+    document.querySelectorAll('.project-link').forEach(function(btn, idx) {
+        btn.onclick = function(e) {
+            e.preventDefault();
+            document.getElementById('popup-overlay').style.display = 'flex';
+            document.getElementById('popup-detail-content').innerHTML =
+                `<h2>${projectDetails[idx].title}</h2><div style="margin-top:16px;">${projectDetails[idx].content}</div>`;
+        }
+    });
+    // Đóng popup khi nhấn ra ngoài khung trắng
+    document.getElementById('popup-overlay').onclick = function(e) {
+        if (e.target === this) {
+            this.style.display = 'none';
+        }
+    };
+    </script>
 </body>
 </html>

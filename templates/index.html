@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Nội dung trang chính -->
+    <h1>Welcome to the Home Page</h1>
+    <button id="show-detail-btn">Show Detail</button>
+
+    <!-- Container cho popup -->
+    <div id="popup-container"></div>
+
+    <script>
+    document.getElementById('show-detail-btn').onclick = function() {
+        fetch('/detail')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('popup-container').innerHTML = html;
+            });
+    };
+    </script>
+</body>
+</html>
